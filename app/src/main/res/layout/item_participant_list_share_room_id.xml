@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <FrameLayout
+            android:id="@+id/participant_list_item_frame_layout_profile"
+            android:layout_width="68dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/participant_list_item_image_view_profile"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_copy"
+                />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/participant_list_item_text_view_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/participant_list_item_frame_layout_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textColor="@color/onlight_01"
+            android:lineSpacingExtra="8sp"
+            android:text="@string/participant_list_share_room_id" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/onlight_04"
+            app:layout_constraintStart_toEndOf="@id/participant_list_item_frame_layout_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

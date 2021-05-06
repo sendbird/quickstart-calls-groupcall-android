@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rooms_nav_graph"
+    app:startDestination="@id/groupCallFragment">
+
+    <fragment
+        android:id="@+id/groupCallFragment"
+        android:name="com.sendbird.calls.quickstart.groupcall.room.GroupCallFragment"
+        android:label="fragment_group_call"
+        tools:layout="@layout/fragment_group_call" >
+        <action
+            android:id="@+id/action_groupCallFragment_to_participantListFragment"
+            app:destination="@id/participantListFragment" />
+        <action
+            android:id="@+id/action_groupCallFragment_to_roomInfoFragment"
+            app:destination="@id/roomInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/participantListFragment"
+        android:name="com.sendbird.calls.quickstart.groupcall.room.ParticipantListFragment"
+        android:label="ParticipantListFragment"
+        tools:layout="@layout/fragment_participant_list">
+        <argument
+            android:name="room_id"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomInfoFragment"
+        android:name="com.sendbird.calls.quickstart.groupcall.room.RoomInfoFragment"
+        android:label="fragment_room_info"
+        tools:layout="@layout/fragment_room_info">
+
+        <argument
+            android:name="room_id"
+            app:argType="string"
+            android:defaultValue="" />
+
+    </fragment>
+</navigation>

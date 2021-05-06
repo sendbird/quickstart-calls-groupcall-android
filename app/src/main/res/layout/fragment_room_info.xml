@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".room.RoomInfoFragment"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/room_info_image_view_left_arrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/icon_arrow_left"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:textColor="@color/onlight_01"
+                android:text="@string/room_info_title"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="28dp"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/onlight_04" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/room_info_room_id_title"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/onlight_02"
+            android:lineSpacingExtra="0sp" />
+
+        <TextView
+            android:id="@+id/fragment_room_info_text_view_room_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/onlight_01"
+            android:lineSpacingExtra="6sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/onlight_04"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/room_info_created_by_title"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/onlight_02"
+            android:lineSpacingExtra="0sp" />
+
+        <TextView
+            android:id="@+id/fragment_room_info_text_view_created_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/onlight_01"
+            android:lineSpacingExtra="6sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/onlight_04"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+</layout>

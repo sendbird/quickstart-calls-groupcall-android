@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".preview.PreviewActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/preview_constraint_layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/preview_image_view_close"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/icon_close"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:textColor="@color/onlight_01"
+                android:text="@string/preview_title"
+                android:layout_marginStart="28dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/preview_image_view_close" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/preview_view_border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/onlight_04"
+            app:layout_constraintTop_toBottomOf="@id/preview_constraint_layout_header" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/preview_card_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintDimensionRatio="W,4:3"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="3.3dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/preview_view_border">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/preview_preview_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <CheckBox
+            android:id="@+id/preview_audio_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/preview_mute_my_audio"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textColor="@color/onlight_01"
+            android:lineSpacingExtra="8sp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            app:layout_constraintTop_toBottomOf="@id/preview_card_view" />
+
+        <CheckBox
+            android:id="@+id/preview_video_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/preview_turn_off_my_video"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textColor="@color/onlight_01"
+            android:lineSpacingExtra="8sp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            app:layout_constraintTop_toBottomOf="@id/preview_audio_checkbox" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/preview_enter_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:cornerRadius="4dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/preview_enter"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/ondark_01"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="2sp"
+            app:backgroundTint="#742ddd"
+            app:layout_constraintTop_toBottomOf="@id/preview_video_checkbox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

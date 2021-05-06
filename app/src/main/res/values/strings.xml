@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Sendbird GroupCall</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_nickname">—</string>
+    <string name="user_id_template">User ID: %1$s</string>
+
+    <!-- SignInActivity -->
+    <string name="sign_in_title">SendBird Calls</string>
+    <string name="sign_in_hint_application_id">Application ID</string>
+    <string name="sign_in_hint_user_id">User ID</string>
+    <string name="sign_in_hint_access_token">Access token (optional)</string>
+    <string name="sign_in_button">Sign in</string>
+
+    <!-- DashboardFragment -->
+    <string name="dashboard_create_room_title">Create a room</string>
+    <string name="dashboard_create_room_description">Start a group call in a room and share the room ID with others.</string>
+    <string name="dashboard_create_room_button">Create</string>
+    <string name="dashboard_enter_with_room_id_title">Enter with room ID</string>
+    <string name="dashboard_enter_with_room_id_description">Enter an existing room to participate in a group call.</string>
+    <string name="dashboard_hint_room_id">Room ID</string>
+    <string name="dashboard_button_enter">Enter</string>
+    <string name="dashboard_can_not_create_room">Can\'t create room</string>
+    <string name="dashboard_can_not_enter_room">Can\'t enter room</string>
+    <string name="dashboard_incorrect_room_id">Incorrect room ID</string>
+    <string name="dashboard_can_not_enter_room_max_participants_count_exceeded">This room is full. Try again later</string>
+    <string name="dashboard_incorrect_room_id_body">Check your room ID and try again.</string>
+    <string name="dashboard_invalid_room_params">The type of the room you’re trying to create isn’t specified</string>
+
+    <!-- SettingsFragment -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_application_information">Application information</string>
+    <string name="settings_sign_out">Sign out</string>
+
+    <!-- AppInfoFragment -->
+    <string name="app_info_name">Name</string>
+    <string name="app_info_id">ID</string>
+
+    <!-- PreviewFragment -->
+    <string name="preview_title">Enter room</string>
+    <string name="preview_mute_my_audio">Mute my audio</string>
+    <string name="preview_turn_off_my_video">Turn off my video</string>
+    <string name="preview_enter">Enter</string>
+
+    <!-- GroupCallFragment -->
+    <string name="group_call_settings">Settings</string>
+    <string name="group_call_participants">Participants</string>
+    <string name="group_call_created_room_title">Room created!</string>
+    <string name="group_call_created_room_message">Share the room ID for others to enter this room for group calls.</string>
+    <string name="group_call_room_id">Room ID</string>
+    <string name="group_call_copied">Copied</string>
+    <string name="group_call_select_audio_device_dialog_title">Audio device</string>
+
+    <!-- ParticipantListFragment -->
+    <string name="participant_list_title">Participants (%1$s)</string>
+    <string name="participant_list_share_room_id">Share room ID</string>
+
+    <!-- RoomInfoFragment -->
+    <string name="room_info_title">Room information</string>
+    <string name="room_info_room_id_title">Room ID</string>
+    <string name="room_info_created_by_title">Created by</string>
+</resources>
