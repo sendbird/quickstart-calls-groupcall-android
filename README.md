@@ -1,4 +1,4 @@
-# Sendbird Calls DirectCall for Android Quickstart
+# Sendbird Calls Group call for Android Quickstart
 
 ![Platform](https://img.shields.io/badge/platform-android-orange.svg)
 ![Languages](https://img.shields.io/badge/language-kotlin-orange)
