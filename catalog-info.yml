@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: quickstart-calls-groupcall-android
+  description: Public sample repository for Sendbird calls groupcall android
+  annotations:
+    github.com/project-slug: sendbird/quickstart-calls-groupcall-android
+spec:
+  type: library
+  lifecycle: production
+  owner: dep-client-platform
+  system: sendbird-calls
+
