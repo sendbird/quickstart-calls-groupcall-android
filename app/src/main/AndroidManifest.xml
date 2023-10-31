@@ -12,15 +12,19 @@
         android:theme="@style/Theme.SendbirdRooms">
         <activity
             android:name="com.sendbird.calls.quickstart.groupcall.preview.PreviewActivity"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name="com.sendbird.calls.quickstart.groupcall.room.RoomActivity"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name="com.sendbird.calls.quickstart.groupcall.signin.SignInActivity"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name="com.sendbird.calls.quickstart.groupcall.splash.SplashActivity"
+            android:exported="true"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +34,7 @@
         </activity>
         <activity
             android:name="com.sendbird.calls.quickstart.groupcall.main.MainActivity"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
     </application>
 

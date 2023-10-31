@@ -115,11 +115,35 @@ class GroupCallViewModel(
             _currentAudioDevice.postValue(currentAudioDevice)
         }
 
+        override fun onCustomItemsDeleted(deletedKeys: List<String>) {
+        }
+
+        override fun onCustomItemsUpdated(updatedKeys: List<String>) {
+        }
+
+        override fun onDeleted() {
+        }
+
         override fun onError(e: SendBirdException, participant: Participant?) {
             Log.d(TAG, "onError() called with: e = $e, participant = $participant")
             if (e.code == SendBirdError.ERR_LOCAL_PARTICIPANT_LOST_CONNECTION) {
                 // reconnection failed.
             }
+        }
+
+        override fun onInvitationAccepted(roomInvitation: RoomInvitation) {
+        }
+
+        override fun onInvitationCanceled(roomInvitation: RoomInvitation) {
+        }
+
+        override fun onInvitationDeclined(roomInvitation: RoomInvitation) {
+        }
+
+        override fun onLocalParticipantDisconnected(participant: LocalParticipant) {
+        }
+
+        override fun onLocalParticipantReconnected(participant: LocalParticipant) {
         }
 
         override fun onRemoteAudioSettingsChanged(participant: RemoteParticipant) {
