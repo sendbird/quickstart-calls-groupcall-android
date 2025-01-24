@@ -75,6 +75,8 @@ class SettingsFragment : Fragment() {
                     startActivity(intent)
                     activity?.finish()
                 }
+
+                else -> {}
             }
         }
     }

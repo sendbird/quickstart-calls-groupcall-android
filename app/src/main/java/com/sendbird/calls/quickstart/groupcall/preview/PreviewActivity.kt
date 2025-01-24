@@ -57,6 +57,8 @@ class PreviewActivity : BaseActivity() {
                     })
                     finish()
                 }
+
+                else -> {}
             }
         }
     }

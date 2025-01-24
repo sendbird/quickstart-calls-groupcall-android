@@ -6,8 +6,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion "30.0.1"
+    compileSdk 33
+    namespace "com.sendbird.calls.quickstart.groupcall"
 
     defaultConfig {
         applicationId "com.sendbird.calls.quickstart.groupcall"
@@ -24,6 +24,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

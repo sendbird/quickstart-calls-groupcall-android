@@ -1,18 +1,16 @@
 package com.sendbird.calls.quickstart.groupcall.signin
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.sendbird.calls.SendBirdCall
 import com.sendbird.calls.quickstart.groupcall.BuildConfig
-import com.sendbird.calls.quickstart.groupcall.main.MainActivity
 import com.sendbird.calls.quickstart.groupcall.R
 import com.sendbird.calls.quickstart.groupcall.databinding.ActivitySignInBinding
+import com.sendbird.calls.quickstart.groupcall.main.MainActivity
 import com.sendbird.calls.quickstart.groupcall.util.*
 
 class SignInActivity : BaseActivity() {
