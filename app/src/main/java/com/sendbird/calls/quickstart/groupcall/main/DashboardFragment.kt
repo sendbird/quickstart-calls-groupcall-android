@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -23,6 +24,21 @@ import com.sendbird.calls.quickstart.groupcall.util.*
 class DashboardFragment : Fragment() {
     lateinit var binding: FragmentDashboardBinding
     private val viewModel: DashboardViewModel = DashboardViewModel()
+    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_ENTER_FAIL) {
+            val errorCode = result.data?.getIntExtra(EXTRA_ENTER_ERROR_CODE, -1)
+            val errorMessage = if (errorCode == SendBirdError.ERR_PARTICIPANTS_LIMIT_EXCEEDED_IN_ROOM) {
+                getString(R.string.dashboard_can_not_enter_room_max_participants_count_exceeded)
+            } else {
+                result.data?.getStringExtra(EXTRA_ENTER_ERROR_MESSAGE)
+            } ?: UNKNOWN_SENDBIRD_ERROR
+
+            activity?.showAlertDialog(
+                getString(R.string.dashboard_can_not_enter_room),
+                errorMessage
+            )
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -138,7 +154,7 @@ class DashboardFragment : Fragment() {
             putExtra(EXTRA_ROOM_ID, roomId)
         }
 
-        startActivityForResult(intent, REQUEST_CODE_PREVIEW)
+        resultLauncher.launch(intent)
     }
 
     private fun goToRoomActivity(roomId: String) {
@@ -148,21 +164,5 @@ class DashboardFragment : Fragment() {
         }
 
         startActivity(intent)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == REQUEST_CODE_PREVIEW && resultCode == RESULT_ENTER_FAIL) {
-            val errorCode = data?.getIntExtra(EXTRA_ENTER_ERROR_CODE, -1)
-            val errorMessage = if (errorCode == SendBirdError.ERR_PARTICIPANTS_LIMIT_EXCEEDED_IN_ROOM) {
-                getString(R.string.dashboard_can_not_enter_room_max_participants_count_exceeded)
-            } else {
-                data?.getStringExtra(EXTRA_ENTER_ERROR_MESSAGE)
-            } ?: UNKNOWN_SENDBIRD_ERROR
-
-            activity?.showAlertDialog(
-                getString(R.string.dashboard_can_not_enter_room),
-                errorMessage
-            )
-        }
     }
 }
