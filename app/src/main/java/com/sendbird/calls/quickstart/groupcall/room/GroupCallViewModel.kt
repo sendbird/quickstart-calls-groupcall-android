@@ -115,6 +115,18 @@ class GroupCallViewModel(
             _currentAudioDevice.postValue(currentAudioDevice)
         }
 
+        override fun onCustomItemsDeleted(deletedKeys: List<String>) {
+            Log.d(TAG, "onCustomItemsDeleted() called with: deletedKeys = $deletedKeys")
+        }
+
+        override fun onCustomItemsUpdated(updatedKeys: List<String>) {
+            Log.d(TAG, "onCustomItemsUpdated() called with: updated = $updatedKeys")
+        }
+
+        override fun onDeleted() {
+            Log.d(TAG, "onDeleted() called")
+        }
+
         override fun onError(e: SendBirdException, participant: Participant?) {
             Log.d(TAG, "onError() called with: e = $e, participant = $participant")
             if (e.code == SendBirdError.ERR_LOCAL_PARTICIPANT_LOST_CONNECTION) {
@@ -122,26 +134,44 @@ class GroupCallViewModel(
             }
         }
 
+        override fun onInvitationAccepted(roomInvitation: RoomInvitation) {
+            Log.d(TAG, "onInvitationAccepted() called with: roomInvitation = $roomInvitation")
+        }
+
+        override fun onInvitationCanceled(roomInvitation: RoomInvitation) {
+            Log.d(TAG, "onInvitationCanceled() called with: roomInvitation = $roomInvitation")
+        }
+
+        override fun onInvitationDeclined(roomInvitation: RoomInvitation) {
+            Log.d(TAG, "onInvitationDeclined() called with: roomInvitation = $roomInvitation")
+        }
+
+        override fun onLocalParticipantDisconnected(participant: LocalParticipant) {
+            Log.d(TAG, "onLocalParticipantDisconnected() called with: participant = $participant")
+            _participants.postValue(sortedParticipants)
+        }
+
+        override fun onLocalParticipantReconnected(participant: LocalParticipant) {
+            Log.d(TAG, "onLocalParticipantReconnected() called with: participant = $participant")
+            _participants.postValue(sortedParticipants)
+        }
+
         override fun onRemoteAudioSettingsChanged(participant: RemoteParticipant) {
             Log.d(TAG, "onRemoteAudioSettingsChanged() called with: participant = $participant")
             _participants.postValue(_participants.value)
         }
-
         override fun onRemoteParticipantEntered(participant: RemoteParticipant) {
             Log.d(TAG, "onRemoteParticipantEntered() called with: participant = $participant")
             _participants.postValue(sortedParticipants)
         }
-
         override fun onRemoteParticipantExited(participant: RemoteParticipant) {
             Log.d(TAG, "onRemoteParticipantExited() called with: participant = $participant")
             _participants.postValue(sortedParticipants)
         }
-
         override fun onRemoteParticipantStreamStarted(participant: RemoteParticipant) {
             Log.d(TAG, "onRemoteParticipantStreamStarted() called with: participant = $participant")
             _participants.postValue(sortedParticipants)
         }
-
         override fun onRemoteVideoSettingsChanged(participant: RemoteParticipant) {
             Log.d(TAG, "onRemoteVideoSettingsChanged() called with: participant = $participant")
             _participants.postValue(_participants.value)
