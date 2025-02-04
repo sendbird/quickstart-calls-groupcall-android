@@ -75,6 +75,9 @@ class SettingsFragment : Fragment() {
                     startActivity(intent)
                     activity?.finish()
                 }
+
+                Status.ERROR -> {}
+                Status.LOADING -> {}
             }
         }
     }
