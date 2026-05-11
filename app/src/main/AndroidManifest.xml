@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sendbird.calls.quickstart.groupcall">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+
     <application
         android:name="com.sendbird.calls.quickstart.groupcall.BaseApplication"
         android:allowBackup="true"
@@ -32,6 +36,12 @@
         <activity
             android:name="com.sendbird.calls.quickstart.groupcall.main.MainActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <service
+            android:name="com.sendbird.calls.quickstart.groupcall.room.RoomService"
+            android:exported="false"
+            android:foregroundServiceType="microphone|camera"
+            android:stopWithTask="true" />
     </application>
 
 </manifest>

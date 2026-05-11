@@ -60,4 +60,7 @@
     <string name="room_info_title">Room information</string>
     <string name="room_info_room_id_title">Room ID</string>
     <string name="room_info_created_by_title">Created by</string>
+
+    <!-- RoomService -->
+    <string name="room_service_notification_text">In a group call</string>
 </resources>
